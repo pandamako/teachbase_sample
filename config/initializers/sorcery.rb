@@ -98,11 +98,11 @@ Rails.application.config.sorcery.configure do |config|
   #
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
-  config.teachbase.key = Rails.application.secter.oauth[:teachbase][:key]
-  config.teachbase.secret = Rails.application.secter.oauth[:teachbase][:secret]
+  config.teachbase.key = Rails.application.secret.oauth[:teachbase][:key]
+  config.teachbase.secret = Rails.application.secret.oauth[:teachbase][:secret]
   config.teachbase.user_info_mapping = { email: 'email' }
   config.teachbase.callback_url = "http://#{TeachbaseSample::DOMAIN}/oauth/callback?provider=teachbase"
-  config.teachbase.site = Rails.application.secter.oauth[:teachbase][:site]
+  config.teachbase.site = Rails.application.secret.oauth[:teachbase][:site]
   #
   # config.twitter.key = ""
   # config.twitter.secret = ""
