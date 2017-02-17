@@ -14,7 +14,7 @@ module TeachbaseSample
   end
 
   DOMAIN = case Rails.env
-    when 'production' then 'sample.teachbase.tk'
+    when 'production' then Rails.application.secrets.domain
     # when 'development' then 'localhost:3000'
     when 'development' then Rails.application.secrets.domain
     when 'test' then 'test.dev'
