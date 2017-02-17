@@ -7,15 +7,16 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module TeachbaseSample
-  DOMAIN = case Rails.env
-    when 'production' then 'sample.teachbase.tk'
-    when 'development' then 'localhost:3000'
-    when 'test' then 'test.dev'
-  end
-
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+  end
+
+  DOMAIN = case Rails.env
+    when 'production' then 'sample.teachbase.tk'
+    # when 'development' then 'localhost:3000'
+    when 'development' then Rails.application.secrets.domain
+    when 'test' then 'test.dev'
   end
 end
