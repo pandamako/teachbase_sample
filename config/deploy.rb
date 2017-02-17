@@ -6,7 +6,6 @@ set :group, 'apps'
 set :user, 'roller'
 set :repo_name, fetch(:application)
 set :repo_url, ->{ "git@github.com:pandamako/#{fetch :repo_name}.git" }
-set :rails_env, fetch(:stage)
 set :deploy_user, 'deploy'
 
 set :keep_releases, 5
@@ -20,6 +19,9 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets tmp/sessions public/asse
 set :file_permissions_paths, %w(tmp/pids log tmp/cache/assets public/system)
 set :file_permissions_users, Array(fetch :user)
 set :file_permissions_groups, Array(fetch :group)
+
+set :rails_env, fetch(:stage)
+set :default_stage, fetch(:stage)
 
 Airbrussh.configure do |config|
   config.truncate = false
