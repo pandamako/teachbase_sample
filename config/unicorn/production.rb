@@ -1,7 +1,7 @@
 # Should be 'production' by default, otherwise use other env
 rails_env = 'production'
 
-app_name = 'teachbase_sample_2'
+app_name = 'teachbase_sample'
 # Set your full path to application.
 app_root = "/home/apps/#{app_name}/#{rails_env}"
 app_path = "#{app_root}/current"

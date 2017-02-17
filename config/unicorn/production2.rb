@@ -3,7 +3,7 @@ rails_env = 'production'
 
 app_name = 'teachbase_sample'
 # Set your full path to application.
-app_root = "/home/apps/#{app_name}/#{rails_env}"
+app_root = "/home/apps/#{app_name}_2/#{rails_env}"
 app_path = "#{app_root}/current"
 shared_path = "#{app_root}/shared"
 
